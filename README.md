@@ -2,10 +2,10 @@
 Plot your tips
 
 # Packs needed:
-requests
+requests,
 matplotlib
 
 BUILT WITH LBRY_SDK - https://github.com/lbryio/lbry-sdk.git
 
-
+# Run
 run script.py
