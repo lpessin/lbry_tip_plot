@@ -3,15 +3,18 @@ import matplotlib.pyplot as plt
 
 
 def get_claims_ids():
-    call = requests.post("http://localhost:5279", json={"method": "claim_list", "params": {
-        "claim_type": ['channel', 'stream'],
-        'page_size': 10000,
-        'no_totals': True
-        }}).json().get('result').get('items')
     ids = []
-    for i in call:
-        claim_id = i['claim_id']
-        ids.append(claim_id)
+    for b in range(0, 30):
+        call = requests.post("http://localhost:5279", json={"method": "claim_list", "params": {
+            "claim_type": ['channel', 'stream'],
+            'page_size': 50,
+            'page': b,
+            'no_totals': True
+            }}).json().get('result').get('items')
+        for i in call:
+            claim_id = i['claim_id']
+            ids.append(claim_id)
+    print(len(ids))
     return ids
 
 
