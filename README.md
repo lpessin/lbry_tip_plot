@@ -1,6 +1,9 @@
 # lbry_tip_plot
 Plot your tips
 
+## check the issues
+
+
 # Packs needed:
 requests,
 matplotlib
